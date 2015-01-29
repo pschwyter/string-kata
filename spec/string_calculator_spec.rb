@@ -27,11 +27,25 @@ RSpec.describe StringCalculator, "#add" do
   it "returns 16 when the string is '7,9'" do
   	expect(StringCalculator.add('7,9')).to eq(16)
   end
+
   it "returns 57 when the string is '12,45'" do
   	expect(StringCalculator.add('12,45')).to eq(57)
   end
+
   it "returns 201 when the string is '42,159'" do
   	expect(StringCalculator.add('42,159')).to eq(201)
   end  
+
+  it "returns 4002 when the string is '1558,2,2442'" do
+  	expect(StringCalculator.add('1558,2,2442')).to eq(4002)
+  end 
+
+  it "returns 161 when the string is '15,22,45,79'" do
+  	expect(StringCalculator.add('15,22,45,79')).to eq(161)
+  end 
+
+  it "returns 6 when the string is '1\n2,3'" do
+  	expect(StringCalculator.add("1\n2,3")).to eq(6)
+  end 
 end
 
