@@ -19,5 +19,19 @@ RSpec.describe StringCalculator, "#add" do
   it "returns 0 when the string is '0'" do
   	expect(StringCalculator.add('0')).to eq(0)
   end
+
+  it "returns 3 when the string is '1,2'" do
+  	expect(StringCalculator.add('1,2')).to eq(3)
+  end
+
+  it "returns 16 when the string is '7,9'" do
+  	expect(StringCalculator.add('7,9')).to eq(16)
+  end
+  it "returns 57 when the string is '12,45'" do
+  	expect(StringCalculator.add('12,45')).to eq(57)
+  end
+  it "returns 201 when the string is '42,159'" do
+  	expect(StringCalculator.add('42,159')).to eq(201)
+  end  
 end
 
