@@ -10,7 +10,14 @@ RSpec.describe StringCalculator, "#add" do
   it "returns 0 for empty string" do
     expect(StringCalculator.add("")).to eq(0)
   end
-
   # more tests go here
+
+  it "returns 5 when the string is '5'" do
+  	expect(StringCalculator.add('5')).to eq(5)
+  end
+
+  it "returns 0 when the string is '0'" do
+  	expect(StringCalculator.add('0')).to eq(0)
+  end
 end
 
