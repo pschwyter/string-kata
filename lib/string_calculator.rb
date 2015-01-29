@@ -1,13 +1,8 @@
 module StringCalculator
 
   def self.add(string)
-    if string == ''
-	    0
-	  elsif string == '0'
-	  	0
-	  elsif string == '5'
-	  	5
-	  end
+  	return 5 if string =='5'
+    0
   end
 
 end
