@@ -52,9 +52,28 @@ RSpec.describe StringCalculator, "#add" do
   	expect(StringCalculator.add("//;\n2;5")).to eq(7)
   end 
   # requirement 8
-  # it "returns 7 when the string is '//;\n2;5'" do
-  # 	expect(StringCalculator.add("//;\n2;5")).to eq(7)
-  # end 
+  it "throws exception when the string contains a negative number" do
+  	expect{StringCalculator.add("-1")}.to raise_error
+  end 
+
+  it "does not throw exception when the string contains a negative number even if dash is the delimiter" do
+  	expect{StringCalculator.add("//-\n2-1")}.to_not raise_error
+  end 
+
+  # requirement 9
+  it "throws simple exception when the string contains a single negative number" do
+  	expect{StringCalculator.add("2,-1")}.to raise_error("Cannot handle negative numbers.")
+  end   
+
+  it "throws compound exception when the string contains multiple negative numbers" do
+  	expect{StringCalculator.add("-15,-3")}.to raise_error("Cannot handle negative numbers [-15,-3].")
+  end 
+
+  it "throws compound exception when the string contains multiple negative numbers and some positives" do
+  	expect{StringCalculator.add("-15,5,-22,13")}.to raise_error("Cannot handle negative numbers [-15,-22].")
+  end 
+
+  # requirement 10
 end
 
 
