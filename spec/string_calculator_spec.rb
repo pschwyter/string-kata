@@ -51,6 +51,10 @@ RSpec.describe StringCalculator, "#add" do
   it "returns 7 when the string is '//;\n2;5'" do
   	expect(StringCalculator.add("//;\n2;5")).to eq(7)
   end 
+  # requirement 8
+  # it "returns 7 when the string is '//;\n2;5'" do
+  # 	expect(StringCalculator.add("//;\n2;5")).to eq(7)
+  # end 
 end
 
 
